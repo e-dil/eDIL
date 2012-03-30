@@ -1,0 +1,25 @@
+.row
+  .span9
+    %h1= "Columns #{@column.number} & #{@next_column.number}"
+  .span3.pull-right
+    .row
+      .progress.progress-striped
+        .bar{style: "width: #{@viewed}%"}
+      .btn-toolbar
+        .btn-group
+          - unless @prev_column.nil?
+            = link_to 'Previous', @prev_column, class: 'btn btn-large'
+          - unless @next_column.nil?
+            = link_to 'Next', @next_column, class: 'btn btn-large'
+
+.row
+  .column.prettyprint.linenums.span6
+    %ol.linenums
+      - for line in @column.lines
+        %li
+          %p= raw line.html
+  .column.prettyprint.linenums.span6
+    %ol.linenums
+      - for line in @next_column.lines
+        %li
+          %p= raw line.html

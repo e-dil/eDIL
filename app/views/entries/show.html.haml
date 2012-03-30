@@ -1,0 +1,28 @@
+%h1= @entry.orth
+
+.nav.btn-group.pull-right
+  - unless @prev_entry.nil?
+    = link_to 'Prev', @prev_entry, class: :btn
+  - unless @next_entry.nil?
+    = link_to 'Next', @next_entry, class: :btn
+
+.row
+  .well
+    = raw @entry.body.gsub(/<br.+?>/, '')
+
+.row
+  %dl#pos.span4
+    %dt Part Of Speech
+    - for pos in @entry.part_of_speeches
+      %dd= pos.name
+
+  %dl#bibl.span4
+    %dt Bibliographic References
+    - for bibl in @entry.bibls
+      %dd= bibl.str
+
+  %dl#defs.span4
+    %dt Definitions
+    - for defi in @entry.definitions
+      %dd= defi.name
+

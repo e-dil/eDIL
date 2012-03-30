@@ -1,0 +1,2 @@
+class PartOfSpeechesController < ApplicationController
+end
