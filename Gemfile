@@ -25,7 +25,3 @@ end
 
 gem 'jquery-rails'
 gem 'bcrypt-ruby', '~> 3.0.0'
-# gem 'jbuilder'
-# gem 'unicorn'
-# gem 'capistrano'
-# gem 'ruby-debug19', :require => 'ruby-debug'
